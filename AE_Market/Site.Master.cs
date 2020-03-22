@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using 
 
 namespace AE_Market
 {
@@ -16,7 +17,7 @@ namespace AE_Market
                 lblNombreUsuario.Visible = true;
                 linkLogout.Visible = true;
 
-                UserEntidad user = (UserEntidad)Session["user"];
+                UsuarioEntidad user = (UsuarioEntidad)Session["user"];
                 lblNombreUsuario.Text = user.nombreUser;
 
             }
