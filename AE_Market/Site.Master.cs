@@ -19,12 +19,12 @@ namespace AE_Market
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["user"];
                 lblNombreUsuario.Text = user.nombre;
+            }
+        }
 
-            }
-            else
-            {
-                Response.Redirect("login.aspx");
-            }
+        protected void linkLogout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
