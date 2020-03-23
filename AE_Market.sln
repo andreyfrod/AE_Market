@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE_Market_Entidades", "AE_M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE_Market_LN", "AE_Market_LN\AE_Market_LN.csproj", "{A088DDC8-F0FF-4801-97F8-D913183860AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE_Market_Web", "AE_Market_Web\AE_Market_Web.csproj", "{7B999467-1962-40AA-BF8D-B580622BC44C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{A088DDC8-F0FF-4801-97F8-D913183860AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A088DDC8-F0FF-4801-97F8-D913183860AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A088DDC8-F0FF-4801-97F8-D913183860AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B999467-1962-40AA-BF8D-B580622BC44C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B999467-1962-40AA-BF8D-B580622BC44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B999467-1962-40AA-BF8D-B580622BC44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B999467-1962-40AA-BF8D-B580622BC44C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
