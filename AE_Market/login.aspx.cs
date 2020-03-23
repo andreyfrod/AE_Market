@@ -1,4 +1,4 @@
-﻿using Entidades;
+﻿using AE_Market_Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace PracticaWeb
                 UsuarioEntidad user = new UsuarioEntidad();
                 user.nombre = txtNombreUsuario.Text;
                 user.password = txtPassword.Text;
-                user = UserLN.Obtener(user);
+                //user = UserLN.Obtener(user);
                 if (user != null)
                 {
                     Session["user"] = user;
