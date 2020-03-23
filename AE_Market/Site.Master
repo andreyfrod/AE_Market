@@ -58,17 +58,10 @@
             </div>
             <div class="col-auto align-self-end">
                 <span class="navbar-text">Usuario: 
-            <asp:Label ID="lblNombreUsuario"
-                Visible="false"
-                runat="server" Text="" CssClass="btn btn-outline-secondary"></asp:Label>
-                    <asp:LinkButton ID="linkLogout"
-                        Visible="false"
-                        runat="server"
-                        CssClass="btn btn-outline-primary"
-                        OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
+            <asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text="" CssClass="btn btn-outline-secondary"></asp:Label>
+            <asp:LinkButton ID="linkLogout" Visible="false" runat="server" CssClass="btn btn-outline-primary" OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
                 </span>
             </div>
-
         </div>
 
 
