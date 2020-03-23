@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AE_Market_Web
+namespace AE_Market
 {
 
 
