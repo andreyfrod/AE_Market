@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AE_Market_Datos\AE_Market_Datos.csproj">
+      <Project>{7F16E730-34A6-4CBF-9090-611BA0632CAB}</Project>
+      <Name>AE_Market_Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AE_Market_Entidades\AE_Market_Entidades.csproj">
       <Project>{AE159B3B-718E-4456-9A7F-D82ED4544E2E}</Project>
       <Name>AE_Market_Entidades</Name>

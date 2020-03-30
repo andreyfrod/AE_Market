@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using AE_Market_Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,15 +14,16 @@ namespace LogicaNegocio
         public static List<ProductoEntidad> ObtenerTodos()
         {
             List<ProductoEntidad> lista = new List<ProductoEntidad>();
-            DataSet ds = BicicletaDatos.SeleccionarTodos();
+            DataSet ds = ProductoDatos.SeleccionarTodos();
 
             foreach (DataRow fila in ds.Tables[0].Rows)
             {
                 ProductoEntidad registro = new ProductoEntidad();
-                registro.idBicicleta = Convert.ToInt16(fila["idBicicleta"]);
+                registro.idProducto = Convert.ToInt32(fila["idProducto"]);
+                registro.tipoProducto = fila["tipoProducto"].ToString();
                 registro.nombre = fila["nombre"].ToString();
                 registro.descripcion = fila["descripcion"].ToString();
-                registro.precioHora = Convert.ToDecimal(fila["precioHora"]);
+                registro.precio = Convert.ToDecimal(fila["precio"]);
                 lista.Add(registro);
             }
             return lista;
