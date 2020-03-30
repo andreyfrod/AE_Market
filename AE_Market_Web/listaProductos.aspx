@@ -5,7 +5,7 @@
 <h2>Productos</h2>
          <asp:ListView ID="listaProductos" runat="server" GroupItemCount="3"
         DataKeyNames="idProducto"
-        ItemType="AE_Market_Entidades.ProductoEntidad"
+        ItemType="Entidades.ProductoEntidad"
         SelectMethod="listaProducto_GetData">
         <EmptyDataTemplate>
             <div class="col-lg-4">

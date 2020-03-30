@@ -26,7 +26,7 @@ namespace AE_Market_Web
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public List<AE_Market_Entidades.ProductoEntidad> listaProducto_GetData()
+        public List<Entidades.ProductoEntidad> listaProducto_GetData()
         {
             return ProductoLN.ObtenerTodos();
         }

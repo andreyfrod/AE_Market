@@ -13,5 +13,10 @@ namespace AE_Market_Web
         {
 
         }
+
+        protected void linkLogout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

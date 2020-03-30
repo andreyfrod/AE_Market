@@ -4,65 +4,55 @@
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - AE Market</title>
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/sweetalert2.min.js"></script>
+    <script src="Scripts/mensaje.js"></script>
+    <link href="Content/bootstrap.yeti.min.css" rel="stylesheet" />
+    <link href="Content/sweetalert2.min.css" rel="stylesheet" />
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div>
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">AE Market</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Sobre nosotros</a></li>
-                        <li><a runat="server" href="~/Contact">Contactenos</a></li>
-                    </ul>
-                </div>
+    <form id="form1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="col align-self-start">
+                <asp:Menu ID="Menu1"
+                    runat="server"
+                    Orientation="Horizontal" 
+                    CssClass="navbar-nav mr-auto" DataSourceID="SiteMapDataSource1">
+                    <StaticMenuStyle CssClass="nav-item"  />
+                    <StaticSelectedStyle CssClass="active" />
+                    <DynamicMenuStyle CssClass="dropdown-menu" />
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="nav-link" HorizontalPadding="10" />
+                        <asp:MenuItemStyle CssClass="nav-link" />
+                    </LevelMenuItemStyles>
+                </asp:Menu>
+                <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1" ShowStartingNode="false"></asp:SiteMapDataSource>
+            </div>
+            <div class="col-auto align-self-end">
+                <span class="navbar-text">Usuario: 
+            <asp:Label ID="lblNombreUsuario"
+                Visible="false"
+                runat="server" Text="" CssClass="btn btn-outline-secondary"></asp:Label>
+                    <asp:LinkButton ID="linkLogout"
+                        Visible="false"
+                        runat="server"
+                        CssClass="btn btn-outline-primary"
+                        OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
+                </span>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
