@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A088DDC8-F0FF-4801-97F8-D913183860AE}</ProjectGuid>
+    <ProjectGuid>{7F16E730-34A6-4CBF-9090-611BA0632CAB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogicaNegocio</RootNamespace>
-    <AssemblyName>LogicaNegocio</AssemblyName>
+    <RootNamespace>AE_Market_Datos</RootNamespace>
+    <AssemblyName>AE_Market_Datos</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AE_Market_Entidades\AE_Market_Entidades.csproj">
-      <Project>{AE159B3B-718E-4456-9A7F-D82ED4544E2E}</Project>
-      <Name>AE_Market_Entidades</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class CompraEntidad
+    public class CompraEntidad
     {
+        public int idCompra { get; set; }
+        public DateTime fecha { get; set; }
+        public int idUsuario { get; set; }
+        public int idProducto { get; set; }
+        public int cantidadProductos { get; set; }
+        public Decimal total { get; set; }
     }
 }

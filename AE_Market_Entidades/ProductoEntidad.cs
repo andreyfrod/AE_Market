@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class ProductoEntidad
+    public class ProductoEntidad
     {
+        public int idProducto { get; set; }
+        public String tipoProducto { get; set; }
+        public String nombre { get; set; }
+        public String descripcion { get; set; }
+        public Decimal precio { get; set; }
     }
 }
