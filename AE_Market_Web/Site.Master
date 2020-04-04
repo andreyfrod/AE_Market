@@ -39,13 +39,14 @@
             <asp:Label ID="lblNombreUsuario"
                 Visible="false"
                 runat="server" Text="" CssClass="btn btn-outline-secondary"></asp:Label>
-                    <asp:LinkButton ID="linkLogout"
-                        Visible="false"
-                        runat="server"
-                        CssClass="btn btn-outline-primary"
-                        OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
+            <asp:LinkButton ID="linkLogout"
+                Visible="false"
+                runat="server"
+                CssClass="btn btn-outline-primary"
+                OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
                 </span>
             </div>
+
         </div>
         <div class="container">
             <div class="row justify-content-md-center">
