@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AE_Market_Web.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title><%: Page.Title %> - AE Market</title>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/sweetalert2.min.js"></script>
+    <script src="Scripts/mensaje.js"></script>
+    <link href="Content/bootstrap.yeti.min.css" rel="stylesheet" />
+    <link href="Content/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="col align-self-start">
+                <asp:Menu ID="Menu1"
+                    runat="server"
+                    Orientation="Horizontal" 
+                    CssClass="navbar-nav mr-auto" DataSourceID="SiteMapDataSource1">
+                    <StaticMenuStyle CssClass="nav-item"  />
+                    <StaticSelectedStyle CssClass="active" />
+                    <DynamicMenuStyle CssClass="dropdown-menu" />
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="nav-link" HorizontalPadding="10" />
+                        <asp:MenuItemStyle CssClass="nav-link" />
+                    </LevelMenuItemStyles>
+                </asp:Menu>
+                <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1" ShowStartingNode="false"></asp:SiteMapDataSource>
+            </div>
+            <div class="col-auto align-self-end">
+                <span class="navbar-text">Usuario: 
+            <asp:Label ID="lblNombreUsuario"
+                Visible="false"
+                runat="server" Text="" CssClass="btn btn-outline-secondary"></asp:Label>
+            <asp:LinkButton ID="linkLogout"
+                Visible="false"
+                runat="server"
+                CssClass="btn btn-outline-primary"
+                OnClick="linkLogout_Click">Cerrar Sesión</asp:LinkButton>
+                </span>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - AE Developers</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
