@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <asp:Button ID="btnLogin" CssClass="btn btn-primary" ValidationGroup="login" runat="server" Text="Iniciar Sesion" OnClick="btnLogin_Click"  />
-                        <asp:Button ID="btnCompras" CssClass="btn btn-primary" ValidationGroup="login" runat="server" Text="Comprar sin iniciar Sesion" OnClick="btnCompras_Click"  />
+                        <asp:Button ID="btnCompras" CssClass="btn btn-primary" runat="server" Text="Comprar sin iniciar Sesion" OnClick="btnCompras_Click"  />
                     </fieldset>
                 </div>
             </div>
