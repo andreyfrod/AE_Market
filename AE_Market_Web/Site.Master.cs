@@ -18,10 +18,10 @@ namespace AE_Market_Web
             {
                 lblNombreUsuario.Visible = true;
                 linkLogout.Visible = true;
-                
+                lblIniciaSesion.Visible = false;
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
-                lblNombreUsuario.Text = user.email;
+                lblNombreUsuario.Text = user.nombre;
 
             }
             //else

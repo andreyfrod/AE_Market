@@ -25,6 +25,7 @@
             <div class="col-lg-4">
             <div class="card text-center border-primary mb-4">
                 <div class="card-body">
+                    <img />
                     <h5 class="card-title"><%#:Item.nombre %></h5>
                     <p class="card-text"><%#:Item.descripcion %></p>
                     <p class="card-text"><%#:Item.tipoProducto %></p>
