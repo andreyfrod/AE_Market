@@ -21,6 +21,6 @@ namespace AE_Market_Web
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listaProductos;
+        protected global::System.Web.UI.WebControls.ListView listaProducto;
     }
 }

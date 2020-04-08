@@ -1,4 +1,5 @@
-﻿using LogicaNegocio;
+﻿using Entidades;
+using LogicaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace AE_Market_Web
         }
         protected void btnAgregar_Command(object sender, CommandEventArgs e)
         {
-            int id = int.Parse(e.CommandArgument.ToString());
-            Response.Redirect("mantenimiento.aspx?id=" + id);
+            ProductoEntidad producto = ProductoLN.Obtener(Convert.ToInt32(e.CommandArgument.ToString()));
+            CompraLN.AgregarProductoLista(producto);
         }
 
         // The return type can be changed to IEnumerable, however to support
