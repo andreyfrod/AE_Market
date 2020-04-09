@@ -1,4 +1,5 @@
 ﻿
+using AE_Market_Entidades;
 using PracticaDatos;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,38 @@ namespace AE_Market_Datos
             comando.CommandType = CommandType.StoredProcedure;
             DataSet ds = db.ExecuteReader(comando, "usuario");
             return ds;
+        }
+
+        public static void Insertar(UsuarioEntidad usuario)
+        {
+            Database db = DatabaseFactory.CreateDatabase("Default");
+            SqlCommand comando = new SqlCommand("PA_InsertarUsuario");
+            comando.CommandType = CommandType.StoredProcedure;
+            //Parámetros
+            comando.Parameters.AddWithValue("@tipoUsuario", usuario.tipoUsuario);
+            comando.Parameters.AddWithValue("@nombre", usuario.nombre);
+            comando.Parameters.AddWithValue("@idNivel", usuario.nivelEntidad.idNivel);
+            comando.Parameters.AddWithValue("@direccion", usuario.direccion);
+            comando.Parameters.AddWithValue("@telefono", usuario.telefono);
+            comando.Parameters.AddWithValue("@email", usuario.email);
+            comando.Parameters.AddWithValue("@password", usuario.password);
+            db.ExecuteNonQuery(comando);
+        }
+        //Modificar un usuario
+        public static void Modificar(UsuarioEntidad usuario)
+        {
+            Database db = DatabaseFactory.CreateDatabase("Default");
+            SqlCommand comando = new SqlCommand("PA_ActualizarReserva");
+            comando.CommandType = CommandType.StoredProcedure;
+            //Parámetros
+            comando.Parameters.AddWithValue("@tipoUsuario", usuario.tipoUsuario);
+            comando.Parameters.AddWithValue("@nombre", usuario.nombre);
+            comando.Parameters.AddWithValue("@idNivel", usuario.nivelEntidad.idNivel);
+            comando.Parameters.AddWithValue("@direccion", usuario.direccion);
+            comando.Parameters.AddWithValue("@telefono", usuario.telefono);
+            comando.Parameters.AddWithValue("@email", usuario.email);
+            comando.Parameters.AddWithValue("@password", usuario.password);
+            db.ExecuteNonQuery(comando);
         }
     }
 }

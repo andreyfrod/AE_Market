@@ -23,6 +23,11 @@ namespace LogicaNegocio
                 registro.nombre = fila["nombre"].ToString();
                 registro.email = fila["email"].ToString();
                 registro.password = fila["password"].ToString();
+                registro.tipoUsuario = fila["tipoUsuario"].ToString();
+                registro.nivelEntidad = NivelLN.Obtener(Convert.ToInt16(fila["idUsuario"]));
+                registro.direccion = fila["direccion"].ToString();
+                registro.telefono = fila["telefono"].ToString();
+
                 lista.Add(registro);
             }
             return lista;
@@ -42,6 +47,15 @@ namespace LogicaNegocio
             UsuarioEntidad user = new UsuarioEntidad();
             user = (lista.Find(elemento => elemento.email == usuario.email && elemento.password == usuario.password));
             return user;
+        }
+        public static void Nuevo(UsuarioEntidad usuario)
+        {
+            UsuarioDatos.Insertar(usuario);
+        }
+        //Modificar
+        public static void Modificar(UsuarioEntidad usuario)
+        {
+            UsuarioDatos.Modificar(usuario);
         }
     }
 }
