@@ -13,5 +13,14 @@ namespace AE_Market_Web
 
     public partial class carritoCompras
     {
+
+        /// <summary>
+        /// cantidadItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cantidadItems;
     }
 }

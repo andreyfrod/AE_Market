@@ -9,7 +9,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
-
                         <table class="table">
                             <thead>
                                 <tr>
@@ -24,6 +23,7 @@
                             <tbody>
                                 <% foreach (var Carrito in listaCarrito)
                                    { %>
+                                
                                 <tr>
                                     <%--<td class="thumbnail-img"><a href="#">
                                         <img class="img-fluid" src="images/img-pro-01.jpg" alt="" /></a>
@@ -33,16 +33,17 @@
                                     <td class="price-pr">
                                         <p> ₡ <%= Carrito.precio %> </p>
                                     </td>
-                                    <td id="cantidad" class="quantity-box">
-                                        <input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">
+                                    <td class="quantity-box">
+                                        <asp:TextBox id="cantidadItems" TextMode="Number" Text="1" runat="server" min="1" max="20" step="1" AutoPostBack="true" OnTextChanged="cantidadItems_TextChanged"/>
+                                        <%--<input runat="server" id="cantidad" type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">--%>
                                     </td>
                                     <td class="total-pr">
-                                        <p> ₡ <%= Carrito.precio %></p>
+                                        <p id="totalxCantidad"> ₡ <%= Carrito.precio * Convert.ToInt32(cantidadItems.Text) %> </p>
                                     </td>
                                     <td class="remove-pr"><a href="#"><i class="fas fa-times"></i></a>
                                     </td>
                                 </tr>
-
+                                
                                 <% } %>
                                
                             </tbody>
@@ -76,7 +77,7 @@
                         <h3>Resumen</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
+                            <div class="ml-auto font-weight-bold"> $ </div>
                         </div>
                         <div class="d-flex">
                             <h4>Descuento General</h4>
