@@ -10,14 +10,6 @@
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
 
-                        <%--<asp:GridView ID="gvCarrito" runat="server" AutoGenerateColumns="false">
-                            <Columns>
-                                <asp:BoundField DataField="nombre" />
-                                <asp:BoundField DataField="precio" />
-                            </Columns>
-                        </asp:GridView>--%>
-
-
                         <table class="table">
                             <thead>
                                 <tr>

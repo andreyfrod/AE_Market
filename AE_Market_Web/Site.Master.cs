@@ -1,4 +1,5 @@
 ﻿using AE_Market_Entidades;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace AE_Market_Web
 {
     public partial class SiteMaster : MasterPage
     {
+        public List<ProductoEntidad> listaCarrito { get { return CompraEntidad.listaCarrito; } }
         private object linkLogin;
 
         protected void Page_Load(object sender, EventArgs e)

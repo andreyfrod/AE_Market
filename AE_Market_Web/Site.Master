@@ -126,7 +126,7 @@
                         <li class="side-menu">
 							<a href="carritoCompras.aspx">
 								<i class="fa fa-shopping-cart"></i>
-								<span class="badge">3</span>
+								<span class="badge"> <%= listaCarrito.Count %> </span>
 								<p>Mi carrito</p>
 							</a>
 						</li>
