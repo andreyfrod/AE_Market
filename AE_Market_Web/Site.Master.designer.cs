@@ -51,6 +51,15 @@ namespace AE_Market_Web
         protected global::System.Web.UI.WebControls.Label lblIniciaSesion;
 
         /// <summary>
+        /// lblRegistrarUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistrarUsuario;
+
+        /// <summary>
         /// lblNombreUsuario control.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,13 @@ namespace AE_Market_Web
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
         /// <summary>
-        /// lblRegistrarUsuario control.
+        /// lblNivel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegistrarUsuario;
+        protected global::System.Web.UI.WebControls.Label lblNivel;
 
         /// <summary>
         /// linkLogout control.

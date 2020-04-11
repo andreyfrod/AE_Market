@@ -20,12 +20,14 @@ namespace AE_Market_Web
                 linkLogout.Visible = true;
                 lblIniciaSesion.Visible = false;
                 lblRegistrarUsuario.Visible = true;
-              
+                
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
                 lblNombreUsuario.Text = user.nombre;
                 if (user.tipoUsuario=="Cliente")
                 {
+                    lblNivel.Text = user.nivelEntidad.descripcion;
+                    lblNivel.Visible = true;
                     lblRegistrarUsuario.Visible = false;
                 }
 

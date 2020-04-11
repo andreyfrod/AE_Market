@@ -45,6 +45,9 @@
                 <asp:PlaceHolder ID="groupPlaceHolder" runat="server"></asp:PlaceHolder>
             </div>
         </LayoutTemplate>
+
     </asp:ListView>
+    
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 </asp:Content>
 

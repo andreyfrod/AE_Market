@@ -49,8 +49,9 @@
                     <div class="our-link">
                         <ul>
                             <li><asp:Label ID="lblIniciaSesion" runat="server"> <a href="inicioSesion.aspx"> <i class="fa fa-user s_color"></i> Iniciar Sesion</a> </asp:Label> </li>
-                            <li><asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>
                             <li><asp:Label ID="lblRegistrarUsuario" runat="server"> <a id="prueba" href="RegistroUsuarios.aspx"> <i class="fa fa-user s_color"></i> Registrarse</a> </asp:Label> </li>
+                            <li><asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>
+                            <li><asp:Label ID="lblNivel" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>                 
                             <li><asp:LinkButton ID="linkLogout" Visible="false" runat="server" OnClick="linkLogout_Click"> <i class="fa fa-user s_color"></i> Cerrar Sesion</asp:LinkButton> </li>
                         </ul>
                     </div>
@@ -123,8 +124,8 @@
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
-							<a href="#">
-								<i class="fa fa-shopping-bag"></i>
+							<a href="carritoCompras.aspx">
+								<i class="fa fa-shopping-cart"></i>
 								<span class="badge">3</span>
 								<p>Mi carrito</p>
 							</a>
@@ -136,6 +137,7 @@
             <!-- Start Side Menu -->
             <div class="side">
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <ul>
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
@@ -159,6 +161,7 @@
                         </li>
                     </ul>
                 </li>
+                </ul>
             </div>
             <!-- End Side Menu -->
         </nav>

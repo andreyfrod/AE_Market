@@ -16,5 +16,6 @@ namespace Entidades
         public Decimal total { get; set; }
 
         public static List<ProductoEntidad> listaCarrito = new List<ProductoEntidad>();
+
     }
 }
