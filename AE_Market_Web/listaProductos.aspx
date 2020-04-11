@@ -29,7 +29,7 @@
                     <h5 class="card-title"><%#:Item.nombre %></h5>
                     <p class="card-text"><%#:Item.descripcion %></p>
                     <p class="card-text"><%#:Item.tipoProducto %></p>
-                    <p class="card-text"><%# Eval("precio","${0:N2}") %></p>
+                    <p class="card-text"><%# Eval("precio","₡{0:N2}") %></p>
                     <asp:Button CssClass="btn btn-primary" 
                         ID="btnAgregar" 
                         runat="server" Text="Agregar" 
