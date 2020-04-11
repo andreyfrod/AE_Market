@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistroUsuarios.aspx.cs" Inherits="AE_Market_Web.RegistroUsuarios" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
-   
-       
+   <div class="row">
+       <div class="col col-lg-6">
             <fieldset>
                 <legend>Nuevo Usuario</legend>
                 <div class="form-group row">
@@ -111,8 +111,42 @@
 
 
                 <asp:Button ID="btnRegistrar" ValidationGroup="registrar" OnClick="btnRegistrar_Click" CssClass="btn btn-primary" runat="server" Text="Registrar" />
+            <div class="form-group row">
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="col-sm-2 col-form-label" ></asp:Label>
+                </div>
+            
             </fieldset>
-       
+       </div>
+           <div class="col col-lg-6">
+            <fieldset>
+                <legend>Lista de Usuarios</legend>
+                <asp:GridView ID="grvListado" runat="server"
+                    CssClass="table table-hover"
+                    AutoGenerateColumns="false">
+
+                    <Columns>
+                        <asp:BoundField DataField="tipoUsuario"
+                            HeaderText="Tipo Usuario"
+                            ></asp:BoundField>
+                        <asp:BoundField DataField="nombre"
+                            HeaderText="Nombre"></asp:BoundField>
+                        <asp:BoundField DataField="nivelEntidad.descripcion"
+                            HeaderText="Nivel"></asp:BoundField>
+                        <asp:BoundField DataField="direccion"
+                            HeaderText="Direccion"
+                            ></asp:BoundField>
+                        <asp:BoundField DataField="telefono"
+                            HeaderText="Telefono"></asp:BoundField>
+                        <asp:BoundField DataField="email"
+                            HeaderText="Correo Electronico"></asp:BoundField>
+                    </Columns>
+
+                    <HeaderStyle CssClass="table-info" />
+                </asp:GridView>
+            </fieldset>
+        </div>
+
+
         
-   
+  </div> 
 </asp:Content>

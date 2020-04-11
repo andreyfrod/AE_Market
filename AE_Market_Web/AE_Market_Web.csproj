@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CambioContrasenna.aspx" />
     <Content Include="carritoCompras.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -287,6 +288,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CambioContrasenna.aspx.cs">
+      <DependentUpon>CambioContrasenna.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambioContrasenna.aspx.designer.cs">
+      <DependentUpon>CambioContrasenna.aspx</DependentUpon>
+    </Compile>
     <Compile Include="carritoCompras.aspx.cs">
       <DependentUpon>carritoCompras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

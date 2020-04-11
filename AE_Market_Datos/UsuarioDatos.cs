@@ -39,19 +39,13 @@ namespace AE_Market_Datos
             db.ExecuteNonQuery(comando);
         }
         //Modificar un usuario
-        public static void Modificar(UsuarioEntidad usuario)
+        public static void CambiarContrasenna(String contrasenna, String idUsuario)
         {
             Database db = DatabaseFactory.CreateDatabase("Default");
-            SqlCommand comando = new SqlCommand("PA_ActualizarReserva");
-            comando.CommandType = CommandType.StoredProcedure;
+            SqlCommand comando = new SqlCommand("UPDATE [AE_Market].[dbo].[usuario] SET password = "+contrasenna +" WHERE idUsuario ="+idUsuario);
+            comando.CommandType = CommandType.Text;
             //Parámetros
-            comando.Parameters.AddWithValue("@tipoUsuario", usuario.tipoUsuario);
-            comando.Parameters.AddWithValue("@nombre", usuario.nombre);
-            comando.Parameters.AddWithValue("@idNivel", usuario.nivelEntidad.idNivel);
-            comando.Parameters.AddWithValue("@direccion", usuario.direccion);
-            comando.Parameters.AddWithValue("@telefono", usuario.telefono);
-            comando.Parameters.AddWithValue("@email", usuario.email);
-            comando.Parameters.AddWithValue("@password", usuario.password);
+   
             db.ExecuteNonQuery(comando);
         }
     }

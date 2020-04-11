@@ -24,7 +24,7 @@ namespace LogicaNegocio
                 registro.email = fila["email"].ToString();
                 registro.password = fila["password"].ToString();
                 registro.tipoUsuario = fila["tipoUsuario"].ToString();
-                registro.nivelEntidad = NivelLN.Obtener(Convert.ToInt16(fila["idUsuario"]));
+                registro.nivelEntidad = NivelLN.Obtener(Convert.ToInt16(fila["idNivel"]));
                 registro.direccion = fila["direccion"].ToString();
                 registro.telefono = fila["telefono"].ToString();
 
@@ -52,10 +52,11 @@ namespace LogicaNegocio
         {
             UsuarioDatos.Insertar(usuario);
         }
-        //Modificar
-        public static void Modificar(UsuarioEntidad usuario)
+        //Modificar Contrasenna
+        public static void cambiarContrasenna(String contrasenna, String idUsuario)
         {
-            UsuarioDatos.Modificar(usuario);
+            UsuarioDatos.CambiarContrasenna(contrasenna, idUsuario);
         }
+
     }
 }

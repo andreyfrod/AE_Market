@@ -13,16 +13,24 @@ namespace AE_Market_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.lblMensaje.Text = "";
+            UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
             if (Session["usuario"] == null)
             {
                 this.ddlTipoUsuario.Visible = false;
                 this.lblTipoUsuario.Visible = false;
             }
+            if (user.tipoUsuario == "Administrador") 
+            {
+                listaUsuarios();
+            }
+            
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             UsuarioEntidad usuario = new UsuarioEntidad();
+            
             //Tipo de usuario
             if (Session["usuario"] == null)
             {
@@ -41,7 +49,14 @@ namespace AE_Market_Web
             usuario.password = this.txtContrasenna.Text;
 
             UsuarioLN.Nuevo(usuario);
+            this.lblMensaje.Text = "Usuario agregado con exito";
 
+        }
+
+        private void listaUsuarios()
+        {
+            grvListado.DataSource = UsuarioLN.ObtenerTodos();
+            grvListado.DataBind();
         }
     }
 }

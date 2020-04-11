@@ -22,6 +22,7 @@ namespace AE_Market_Web
                 linkLogout.Visible = true;
                 lblIniciaSesion.Visible = false;
                 lblRegistrarUsuario.Visible = true;
+                lblCambioContrasenna.Visible = true;
                 
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
@@ -54,5 +55,9 @@ namespace AE_Market_Web
                 Response.Redirect("inicioSesion.aspx");
             }
         }
+
+    
+
+   
     }
 }
