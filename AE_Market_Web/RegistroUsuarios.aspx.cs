@@ -20,10 +20,14 @@ namespace AE_Market_Web
                 this.ddlTipoUsuario.Visible = false;
                 this.lblTipoUsuario.Visible = false;
             }
-            if (user.tipoUsuario == "Administrador") 
+            else
             {
-                listaUsuarios();
-            }
+                if (user.tipoUsuario == "Administrador")
+                {
+                    listaUsuarios();
+                }
+            } 
+           
             
         }
 
