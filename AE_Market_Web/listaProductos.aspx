@@ -3,10 +3,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <h2>Productos</h2>
-         <asp:ListView ID="listaProductos" runat="server" GroupItemCount="3"
+    <div class="form-group row">
+            
+            <div class="col-sm-10">
+                <asp:DropDownList ID="ddlProducto" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged"></asp:DropDownList>
+            </div>
+        </div>
+         <asp:ListView ID="listaProducto" runat="server" GroupItemCount="3"
         DataKeyNames="idProducto"
         ItemType="Entidades.ProductoEntidad"
-        SelectMethod="listaProducto_GetData">
+        SelectMethod="listaProducto_GetData"
+             >
         <EmptyDataTemplate>
             <div class="col-lg-4">
                 No hay datos

@@ -15,7 +15,16 @@ namespace AE_Market_Web
     {
 
         /// <summary>
-        /// listaProductos control.
+        /// ddlProducto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProducto;
+
+        /// <summary>
+        /// listaProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

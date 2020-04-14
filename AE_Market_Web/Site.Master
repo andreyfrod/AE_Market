@@ -50,7 +50,7 @@
                         <ul>
                             <li><asp:Label ID="lblIniciaSesion" runat="server"> <a href="inicioSesion.aspx"> <i class="fa fa-user s_color"></i> Iniciar Sesion</a> </asp:Label> </li>
                             <li><asp:Label ID="lblRegistrarUsuario" runat="server"> <a  href="RegistroUsuarios.aspx"> <i class="fa fa-user s_color"></i> Registrarse</a> </asp:Label> </li>
-                             <li><asp:Label ID="lblCambioContrasenna" runat="server"> <a  href="CambioContrasenna.aspx"> <i class="fa fa-user s_color"></i> Cambiar Contraseña</a> </asp:Label> </li>
+                             <li><asp:Label ID="lblCambioContrasenna" Visible="false" runat="server"> <a  href="CambioContrasenna.aspx"> <i class="fa fa-user s_color"></i> Cambiar Contraseña</a> </asp:Label> </li>
                              
                             <li><asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>
                             <li><asp:Label ID="lblNivel" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>                 
