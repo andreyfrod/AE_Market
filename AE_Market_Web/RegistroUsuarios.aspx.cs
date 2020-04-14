@@ -19,6 +19,7 @@ namespace AE_Market_Web
             {
                 this.ddlTipoUsuario.Visible = false;
                 this.lblTipoUsuario.Visible = false;
+                this.lblListaUsuario.Visible = false;
             }
             else
             {

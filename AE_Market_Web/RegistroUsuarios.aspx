@@ -119,7 +119,8 @@
        </div>
            <div class="col col-lg-6">
             <fieldset>
-                <legend>Lista de Usuarios</legend>
+                
+                <asp:Label ID="lblListaUsuario" runat="server" CssClass="col-sm-2 col-form-label" >Lista de Usuarios</asp:Label>
                 <asp:GridView ID="grvListado" runat="server"
                     CssClass="table table-hover"
                     AutoGenerateColumns="false">

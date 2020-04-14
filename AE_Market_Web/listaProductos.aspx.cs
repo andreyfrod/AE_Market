@@ -13,7 +13,10 @@ namespace AE_Market_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ddlProducto.DataSource = ProductoLN.ObtenerTodos();
+            ddlProducto.DataTextField = "tipoProducto";
+            ddlProducto.DataValueField = "tipoProducto";
+            ddlProducto.DataBind();
         }
         protected void btnAgregar_Command(object sender, CommandEventArgs e)
         {
@@ -30,6 +33,14 @@ namespace AE_Market_Web
         public List<Entidades.ProductoEntidad> listaProducto_GetData()
         {
             return ProductoLN.ObtenerTodos();
+        }
+
+        protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var lista= ProductoLN.ObtenerTipo(this.ddlProducto.SelectedValue.ToString());
+            listaProducto.DataSource = ProductoLN.ObtenerTipo(this.ddlProducto.SelectedValue.ToString());
+
+            listaProducto.DataBind();
         }
     }
 }

@@ -34,5 +34,12 @@ namespace LogicaNegocio
             ProductoEntidad prod = lista.Find(elemento => elemento.idProducto == idProducto);
             return prod;
         }
+
+        public static List<ProductoEntidad> ObtenerTipo(String tipoProducto)
+        {
+            List<ProductoEntidad> lista = ProductoLN.ObtenerTodos();
+            List<ProductoEntidad> prod = lista.Where(elemento => elemento.tipoProducto == tipoProducto).ToList();
+            return prod;
+        }
     }
 }
