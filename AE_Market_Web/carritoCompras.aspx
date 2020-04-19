@@ -34,11 +34,12 @@
                                         <p> ₡ <%= Carrito.precio %> </p>
                                     </td>
                                     <td class="quantity-box">
-                                        <asp:TextBox id="cantidadItems" TextMode="Number" Text="1" runat="server" min="1" max="20" step="1" AutoPostBack="true" OnTextChanged="cantidadItems_TextChanged"/>
-                                        <%--<input runat="server" id="cantidad" type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text">--%>
+                                        <asp:TextBox id="cantidadItems" TextMode="Number" Text="1" runat="server" min="1" max="20" step="1" AutoPostBack="true"/>
+                                        <%--<input runat="server" id="cantidad" type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" >--%>
                                     </td>
                                     <td class="total-pr">
-                                        <p id="totalxCantidad"> ₡ <%= Carrito.precio * Convert.ToInt32(cantidadItems.Text) %> </p>
+                                        <% totalcantidad = totalcantidad + (Carrito.precio * Convert.ToInt32(cantidadItems.Text)); %>
+                                        <p> ₡ <%= Carrito.precio * Convert.ToInt32(cantidadItems.Text) %> </p>
                                     </td>
                                     <td class="remove-pr"><a href="#"><i class="fas fa-times"></i></a>
                                     </td>
@@ -63,43 +64,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6">
+<%--                <div class="col-lg-6 col-sm-6">
                     <div class="update-box">
                         <input value="Actulizar orden" type="submit">
                     </div>
-                </div>
+                </div>--%>
             </div>
 
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-8 col-sm-12">
                     <div class="order-box">
                         <h3>Resumen</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ </div>
+                            <div class="ml-auto font-weight-bold"> ₡ <%= totalcantidad %> </div>
                         </div>
                         <div class="d-flex">
                             <h4>Descuento General</h4>
-                            <div class="ml-auto font-weight-bold"> $ 40 </div>
+                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Descuento por cupon</h4>
-                            <div class="ml-auto font-weight-bold"> $ 10 </div>
+                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
                         </div>
                         <div class="d-flex">
                             <h4>IVA</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
+                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
                         </div>
                         <div class="d-flex">
                             <h4>Costo de envio</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
+                            <div class="ml-auto font-weight-bold"> Gratis </div>
                         </div>
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
+                            <div class="ml-auto h5"> ₡ <%= totalcantidad %> </div>
                         </div>
                         <hr> </div>
                 </div>

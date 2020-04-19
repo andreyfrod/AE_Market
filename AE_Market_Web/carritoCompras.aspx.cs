@@ -12,16 +12,11 @@ namespace AE_Market_Web
     {
         public List<ProductoEntidad> listaCarrito { get { return CompraEntidad.listaCarrito; } }
 
-        public int totalSinDescuento;
+        public decimal totalcantidad;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
-        }
-
-        protected void cantidadItems_TextChanged(object sender, EventArgs e)
-        {
-            int totalcantidad = (Convert.ToInt32(cantidadItems.Text));
         }
     }
 }
