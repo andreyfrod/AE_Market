@@ -6,6 +6,7 @@
     <div class="form-group row">
             
             <div class="col-sm-10">
+                <br />
                 <asp:DropDownList ID="ddlProducto" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged"></asp:DropDownList>
             </div>
         </div>
