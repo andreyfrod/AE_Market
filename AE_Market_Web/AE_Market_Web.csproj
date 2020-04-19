@@ -126,6 +126,7 @@
     <Content Include="css\carousel-ticker.css" />
     <Content Include="css\code_animate.css" />
     <Content Include="css\custom.css" />
+    <Content Include="css\custom_dropdown_submenu.css" />
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\responsive.css" />
@@ -144,6 +145,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="images\AELogo.png" />
+    <Content Include="listaProductosElectronicos.aspx" />
+    <Content Include="listaProductosHogar.aspx" />
+    <Content Include="listaProductosVehiculo.aspx" />
     <Content Include="RegistroUsuarios.aspx" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
@@ -332,6 +336,27 @@
     </Compile>
     <Compile Include="listaProductos.aspx.designer.cs">
       <DependentUpon>listaProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProductosElectronicos.aspx.cs">
+      <DependentUpon>listaProductosElectronicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProductosElectronicos.aspx.designer.cs">
+      <DependentUpon>listaProductosElectronicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProductosHogar.aspx.cs">
+      <DependentUpon>listaProductosHogar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProductosHogar.aspx.designer.cs">
+      <DependentUpon>listaProductosHogar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProductosVehiculo.aspx.cs">
+      <DependentUpon>listaProductosVehiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProductosVehiculo.aspx.designer.cs">
+      <DependentUpon>listaProductosVehiculo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroUsuarios.aspx.cs">

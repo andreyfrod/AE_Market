@@ -22,6 +22,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom_dropdown_submenu.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
@@ -50,13 +51,10 @@
                         <ul>
                             <li><asp:Label ID="lblIniciaSesion" runat="server"> <a href="inicioSesion.aspx"> <i class="fa fa-user s_color"></i> Iniciar Sesion</a> </asp:Label> </li>
                             <li><asp:Label ID="lblRegistrarUsuario" runat="server"> <a  href="RegistroUsuarios.aspx"> <i class="fa fa-user s_color"></i> Registrarse</a> </asp:Label> </li>
-                             <li><asp:Label ID="lblCambioContrasenna" Visible="false" runat="server"> <a  href="CambioContrasenna.aspx"> <i class="fa fa-user s_color"></i> Cambiar Contraseña</a> </asp:Label> </li>
-                             
+                            <li><asp:Label ID="lblCambioContrasenna" Visible="false" runat="server"> <a  href="CambioContrasenna.aspx"> <i class="fa fa-user s_color"></i> Cambiar Contraseña</a> </asp:Label> </li>
                             <li><asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>
                             <li><asp:Label ID="lblNivel" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>                 
                             <li><asp:LinkButton ID="linkLogout" Visible="false" runat="server" OnClick="linkLogout_Click"> <i class="fa fa-user s_color"></i> Cerrar Sesion</asp:LinkButton> </li>
-                             
-                            
                         </ul>
                     </div>
                 </div>
@@ -110,9 +108,16 @@
                         <li class="nav-item active"><a class="nav-link" href="Default.aspx">Inicio</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Productos</a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu multi-level" role="menu">
 								<li><a href="listaProductos.aspx">Todos los productos</a></li>
-								<li><a href="shop-detail.html">Categorias</a></li>
+								<li class="dropdown-submenu">
+                                    <a href="#" class="nav-link" data-toggle="dropdown" tabindex="-1">Categorias</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="listaProductosHogar.aspx">Hogar</a></li>
+                                        <li><a href="listaProductosVehiculo.aspx">Vehiculo</a></li>
+                                        <li><a href="listaProductosElectronicos.aspx">Electronicos</a></li>
+                                    </ul>
+                                </li>   
                                 <li><a href="checkout.html">Caja</a></li>
                                 <li><a href="wishlist.html">Cupones</a></li>
                             </ul>

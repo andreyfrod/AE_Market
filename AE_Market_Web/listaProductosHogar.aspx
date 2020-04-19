@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Productos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="listaProductos.aspx.cs" Inherits="AE_Market_Web.listaProductos" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="listaProductosHogar.aspx.cs" Inherits="AE_Market_Web.listaProductosHogar" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,10 +11,10 @@
                 <asp:DropDownList ID="ddlProducto" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged"></asp:DropDownList>
             </div>--%>
         </div>
-         <asp:ListView ID="listaProducto" runat="server" GroupItemCount="3"
+         <asp:ListView ID="listaProductoHogar" runat="server" GroupItemCount="3"
         DataKeyNames="idProducto"
         ItemType="Entidades.ProductoEntidad"
-        SelectMethod="listaProducto_GetData"
+        SelectMethod="listaProductoHogar_GetData"
              >
         <EmptyDataTemplate>
             <div class="col-lg-4">
@@ -58,4 +59,3 @@
     
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 </asp:Content>
-
