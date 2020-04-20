@@ -18,5 +18,13 @@ namespace AE_Market_Web
         {
             
         }
+
+        //public List<CompraEntidad> listaCompra()
+        //{
+
+        //    CompraEntidad compra = new CompraEntidad();
+
+        //    return 
+        //}
     }
 }

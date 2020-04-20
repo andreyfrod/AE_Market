@@ -54,7 +54,7 @@
             </div>
 
             <div class="row my-5">
-                <div class="col-lg-6 col-sm-6">
+                <div class="col-lg-12 col-sm-6">
                     <div class="coupon-box">
                         <div class="input-group input-group-sm">
                             <input class="form-control" placeholder="Ingrese el codigo de su cupon" aria-label="Coupon code" type="text">
