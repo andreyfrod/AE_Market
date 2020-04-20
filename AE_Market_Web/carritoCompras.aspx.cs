@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using LogicaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,11 @@ namespace AE_Market_Web
 
         //    return 
         //}
+
+        protected void btnEliminar_OnClick(object sender, EventArgs e)
+        {
+            ProductoEntidad producto = ProductoLN.Obtener(Convert.ToInt32(e.ToString()));
+            CompraLN.EliminarProductoLista(producto);
+        }
     }
 }

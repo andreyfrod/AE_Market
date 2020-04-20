@@ -145,6 +145,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="images\AELogo.png" />
+    <Content Include="listaNiveles.aspx" />
     <Content Include="listaProductosElectronicos.aspx" />
     <Content Include="listaProductosHogar.aspx" />
     <Content Include="listaProductosVehiculo.aspx" />
@@ -329,6 +330,13 @@
     </Compile>
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaNiveles.aspx.cs">
+      <DependentUpon>listaNiveles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaNiveles.aspx.designer.cs">
+      <DependentUpon>listaNiveles.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaProductos.aspx.cs">
       <DependentUpon>listaProductos.aspx</DependentUpon>

@@ -8,6 +8,17 @@ namespace Entidades
 {
     public class ProductoEntidad
     {
+        private int productId;
+
+        public ProductoEntidad()
+        {
+        }
+
+        public ProductoEntidad(int productId)
+        {
+            this.productId = productId;
+        }
+
         public int idProducto { get; set; }
         public String tipoProducto { get; set; }
         public String nombre { get; set; }

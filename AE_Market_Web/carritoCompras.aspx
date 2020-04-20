@@ -41,7 +41,8 @@
                                         <% totalcantidad = totalcantidad + (Carrito.precio * Convert.ToInt32(cantidadItems.Text)); %>
                                         <p> ₡ <%= Carrito.precio * Convert.ToInt32(cantidadItems.Text) %> </p>
                                     </td>
-                                    <td class="remove-pr"><a href="#"><i class="fas fa-times"></i></a>
+                                    <td class="remove-pr">
+                                        <asp:Button CssClass="btn btn-primary" ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_OnClick" CommandArgument="" />
                                     </td>
                                 </tr>
                                 

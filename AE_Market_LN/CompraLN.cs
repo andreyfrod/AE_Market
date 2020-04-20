@@ -16,6 +16,9 @@ namespace LogicaNegocio
             CompraEntidad.listaCarrito.Add(producto);
         }
 
-
+        public static void EliminarProductoLista(ProductoEntidad producto)
+        {
+            CompraEntidad.listaCarrito.Remove(producto);
+        }
     }
 }
