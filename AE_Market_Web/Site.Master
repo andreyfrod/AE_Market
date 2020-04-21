@@ -54,6 +54,8 @@
                             <li><asp:Label ID="lblCambioContrasenna" Visible="false" runat="server"> <a  href="CambioContrasenna.aspx"> <i class="fa fa-user s_color"></i> Cambiar Contraseña</a> </asp:Label> </li>
                             <li><asp:Label ID="lblNombreUsuario" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>
                             <li><asp:Label ID="lblNivel" Visible="false" runat="server" Text=""> <i class="fa fa-user s_color"></i>  </asp:Label> </li>                 
+                            <li><asp:Label ID="lblCupon" Visible="false" runat="server"> <a href="registroCupones.aspx"> <i class="fa fa-user s_color"></i> Registrar Cupon</a> </asp:Label> </li>
+                            
                             <li><asp:LinkButton ID="linkLogout" Visible="false" runat="server" OnClick="linkLogout_Click"> <i class="fa fa-user s_color"></i> Cerrar Sesion</asp:LinkButton> </li>
                         </ul>
                     </div>
