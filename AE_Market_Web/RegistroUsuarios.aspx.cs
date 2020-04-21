@@ -55,7 +55,15 @@ namespace AE_Market_Web
 
             UsuarioLN.Nuevo(usuario);
             this.lblMensaje.Text = "Usuario agregado con exito";
+            listaUsuarios();
 
+            //limpiar campos
+            this.txtNombre.Text = "";
+            this.txtDireccion.Text = "";
+            this.txtTelefono.Text = "";
+            this.txtCorreo.Text = "";
+            this.txtContrasenna.Text = "";
+            ddlTipoUsuario.ClearSelection();
         }
 
         private void listaUsuarios()

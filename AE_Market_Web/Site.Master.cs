@@ -23,7 +23,7 @@ namespace AE_Market_Web
                 lblIniciaSesion.Visible = false;
                 lblRegistrarUsuario.Visible = true;
                 lblCambioContrasenna.Visible = true;
-                
+                lblCupon.Visible = true;
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
                 lblNombreUsuario.Text = user.nombre;
