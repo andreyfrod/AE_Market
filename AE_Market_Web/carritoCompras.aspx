@@ -16,7 +16,7 @@
                                 <asp:BoundField DataField="precio" HeaderText="Precio" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" DataFormatString="₡{0:N}" />
                                 <asp:TemplateField HeaderText="Cantidad">
                                     <ItemTemplate>
-                                        <asp:TextBox runat="server" ID="txtQuantity" Columns="5" TextMode="Number" min="1" max="20" step="1" AutoPostBack="true" Text='<%# Eval("cantidadProductos") %>' OnTextChanged="txtQuantity_TextChanged"></asp:TextBox><br />
+                                        <asp:TextBox runat="server" CommandArgument='<%# Eval("idProducto") %>' ID="txtQuantity" Columns="5" TextMode="Number" min="1" max="20" step="1" AutoPostBack="true" Text='<%# Eval("cantidadProductos") %>' OnTextChanged="txtQuantity_TextChanged"></asp:TextBox><br />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:BoundField DataField="total" HeaderText="Total" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" DataFormatString="₡{0:N}" />
@@ -49,11 +49,6 @@
                         </div>
                     </div>
                 </div>
-<%--                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Actulizar orden" type="submit">
-                    </div>
-                </div>--%>
             </div>
 
             <div class="row my-5">

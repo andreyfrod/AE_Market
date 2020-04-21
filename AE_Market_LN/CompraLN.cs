@@ -27,11 +27,14 @@ namespace LogicaNegocio
             CarritoEntidad.listaCarrito.Remove(encontrarArticuloenCarrito(producto));
         }
 
-        public static void actualizarCantidad(int producto)
+        public static void actualizarCantidad(int producto, int newCantidad)
         {
             var obj = CarritoEntidad.listaCarrito.FirstOrDefault(x => x.idProducto == producto);
-            if (obj != null) obj.cantidadProductos = txt
- 
+            if (obj != null)
+            {
+                obj.cantidadProductos = newCantidad;
+                obj.total = obj.precio * newCantidad;
+            }
         }
 
     }

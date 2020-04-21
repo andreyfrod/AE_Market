@@ -20,6 +20,7 @@ namespace AE_Market_Web
         {
             if (IsPostBack)
             {
+                
                 int test = 1;
             }
         }
@@ -46,7 +47,13 @@ namespace AE_Market_Web
 
         protected void txtQuantity_TextChanged(object sender, EventArgs e)
         {
+            TextBox row = (TextBox)(sender);
+            GridViewRow grow = (GridViewRow)row.NamingContainer;
+            row = (TextBox)grow.FindControl("txtQuantity");
 
+            int idProducto = Convert.ToInt32(row.Attributes["CommandArgument"].ToString());
+            CompraLN.actualizarCantidad(idProducto, Convert.ToInt32(row.Text));
+            Response.Redirect("carritoCompras.aspx");
         }
     }
 }
