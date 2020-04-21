@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="cajaPago.aspx" />
     <Content Include="CambioContrasenna.aspx" />
     <Content Include="carritoCompras.aspx" />
     <Content Include="Contact.aspx" />
@@ -293,6 +294,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="cajaPago.aspx.cs">
+      <DependentUpon>cajaPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cajaPago.aspx.designer.cs">
+      <DependentUpon>cajaPago.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CambioContrasenna.aspx.cs">
       <DependentUpon>CambioContrasenna.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

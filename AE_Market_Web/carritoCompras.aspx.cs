@@ -13,16 +13,10 @@ namespace AE_Market_Web
     {
         public List<CarritoEntidad> listaCarrito { get { return CarritoEntidad.listaCarrito; } }
 
-        public int cantProd;
         public decimal totalcantidad;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                
-                int test = 1;
-            }
         }
 
         protected ProductoEntidad obtenerProductoxId (int idProducto)
@@ -50,10 +44,21 @@ namespace AE_Market_Web
             TextBox row = (TextBox)(sender);
             GridViewRow grow = (GridViewRow)row.NamingContainer;
             row = (TextBox)grow.FindControl("txtQuantity");
-
             int idProducto = Convert.ToInt32(row.Attributes["CommandArgument"].ToString());
             CompraLN.actualizarCantidad(idProducto, Convert.ToInt32(row.Text));
             Response.Redirect("carritoCompras.aspx");
+        }
+
+        protected void btnPagar_Click(object sender, EventArgs e)
+        {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("inicioSesion.aspx");
+            }
+            else
+            {
+                Response.Redirect("cajaPago.aspx");
+            }
         }
     }
 }

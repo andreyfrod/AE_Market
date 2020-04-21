@@ -11,6 +11,7 @@
                     <div class="table-main table-responsive">
 
                         <asp:GridView runat="server" ID="gvShoppingCart" AutoGenerateColumns="false" EmptyDataText="No hay nada en su carrito, agrege algun articulo." GridLines="None" Width="100%" CellPadding="5" ShowFooter="true" DataKeyNames="idProducto" SelectMethod="gvShoppingCart_GetData">
+                            <HeaderStyle HorizontalAlign="Left" BackColor="yellowgreen" ForeColor="#FFFFFF" />
                             <Columns>
                                 <asp:BoundField DataField="nombre" HeaderText="Producto" />
                                 <asp:BoundField DataField="precio" HeaderText="Precio" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" DataFormatString="₡{0:N}" />
@@ -84,7 +85,7 @@
                         </div>
                         <hr> </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Pagar</a> </div>
+                <div class="col-12 d-flex shopping-box"><asp:LinkButton class="ml-auto btn hvr-hover" runat="server" ID="btnPagar" Text="Pagar" CommandName="Pagar" style="font-size:12px;" OnClick="btnPagar_Click"></asp:LinkButton></div>
             </div>
 
         </div>
