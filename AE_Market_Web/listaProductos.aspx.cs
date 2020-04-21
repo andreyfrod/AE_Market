@@ -17,10 +17,17 @@ namespace AE_Market_Web
         }
         protected void btnAgregar_Command(object sender, CommandEventArgs e)
         {
-            ShoppingCart.Instance.AddItem(Convert.ToInt32(e.CommandArgument.ToString()));
-
             ProductoEntidad producto = ProductoLN.Obtener(Convert.ToInt32(e.CommandArgument.ToString()));
-            CompraLN.AgregarProductoLista(producto);
+            CarritoEntidad carritoCompra = new CarritoEntidad();
+            carritoCompra.idProducto = producto.idProducto;
+            carritoCompra.tipoProducto = producto.tipoProducto;
+            carritoCompra.nombre = producto.nombre;
+            carritoCompra.descripcion = producto.descripcion;
+            carritoCompra.precio = producto.precio;
+            carritoCompra.cantidadProductos = 1;
+            carritoCompra.total = carritoCompra.cantidadProductos * carritoCompra.precio;
+
+            CompraLN.AgregarProductoLista(carritoCompra);
         }
 
         // The return type can be changed to IEnumerable, however to support

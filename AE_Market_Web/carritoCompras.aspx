@@ -9,47 +9,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                   <%-- <th></th>--%>
-                                    <th>Producto</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Total</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% foreach (var Carrito in listaCarrito)
-                                   { %>
-                                
-                                <tr>
-                                    <%--<td class="thumbnail-img"><a href="#">
-                                        <img class="img-fluid" src="images/img-pro-01.jpg" alt="" /></a>
-                                    </td>--%>
-                                    <td class="name-pr"><a href="#"> <%= Carrito.nombre %> </a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p> ₡ <%= Carrito.precio %> </p>
-                                    </td>
-                                    <td class="quantity-box">
-                                        <asp:TextBox id="cantidadItems" TextMode="Number" Text="1" runat="server" min="1" max="20" step="1" AutoPostBack="true"/>
-                                        <%--<input runat="server" id="cantidad" type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" >--%>
-                                    </td>
-                                    <td class="total-pr">
-                                        <% totalcantidad = totalcantidad + (Carrito.precio * Convert.ToInt32(cantidadItems.Text)); %>
-                                        <p> ₡ <%= Carrito.precio * Convert.ToInt32(cantidadItems.Text) %> </p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <asp:Button CssClass="btn btn-primary" ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_OnClick" CommandArgument="" />
-                                    </td>
-                                </tr>
-                                
-                                <% } %>
-                               
-                            </tbody>
-                        </table>
+
+                        <asp:GridView runat="server" ID="gvShoppingCart" AutoGenerateColumns="false" EmptyDataText="No hay nada en su carrito, agrege algun articulo." GridLines="None" Width="100%" CellPadding="5" ShowFooter="true" DataKeyNames="idProducto" SelectMethod="gvShoppingCart_GetData">
+                            <Columns>
+                                <asp:BoundField DataField="nombre" HeaderText="Producto" />
+                                <asp:BoundField DataField="precio" HeaderText="Precio" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" DataFormatString="₡{0:N}" />
+                                <asp:TemplateField HeaderText="Cantidad">
+                                    <ItemTemplate>
+                                        <asp:TextBox runat="server" ID="txtQuantity" Columns="5" TextMode="Number" min="1" max="20" step="1" AutoPostBack="true" Text='<%# Eval("cantidadProductos") %>' OnTextChanged="txtQuantity_TextChanged"></asp:TextBox><br />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:BoundField DataField="total" HeaderText="Total" ItemStyle-HorizontalAlign="Right" HeaderStyle-HorizontalAlign="Right" DataFormatString="₡{0:N}" />
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <asp:LinkButton runat="server" ID="btnRemove" Text="Eliminar" CommandName="Remove" CommandArgument='<%# Eval("idProducto") %>' style="font-size:12px;" OnClick="btnRemove_Click"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+
+                        <% foreach (var item in listaCarrito)
+                            {
+                                totalcantidad = totalcantidad + item.total;
+
+                            } %>
+
                     </div>
                 </div>
             </div>

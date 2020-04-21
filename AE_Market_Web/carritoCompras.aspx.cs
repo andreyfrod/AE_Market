@@ -11,27 +11,42 @@ namespace AE_Market_Web
 {
     public partial class carritoCompras : System.Web.UI.Page
     {
-        public List<ProductoEntidad> listaCarrito { get { return CompraEntidad.listaCarrito; } }
+        public List<CarritoEntidad> listaCarrito { get { return CarritoEntidad.listaCarrito; } }
 
+        public int cantProd;
         public decimal totalcantidad;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (IsPostBack)
+            {
+                int test = 1;
+            }
         }
 
-        //public List<CompraEntidad> listaCompra()
-        //{
-
-        //    CompraEntidad compra = new CompraEntidad();
-
-        //    return 
-        //}
-
-        protected void btnEliminar_OnClick(object sender, EventArgs e)
+        protected ProductoEntidad obtenerProductoxId (int idProducto)
         {
-            ProductoEntidad producto = ProductoLN.Obtener(Convert.ToInt32(e.ToString()));
-            CompraLN.EliminarProductoLista(producto);
+            ProductoEntidad producto = new ProductoEntidad();
+            producto = ProductoLN.Obtener(idProducto);
+            return producto;
+        }
+
+        public List<CarritoEntidad> gvShoppingCart_GetData()
+        {
+            return listaCarrito;
+        }
+
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)(sender);
+            int idProducto = Convert.ToInt32(btn.CommandArgument);
+            CompraLN.EliminarProductoLista(idProducto);
+            Response.Redirect("carritoCompras.aspx");
+        }
+
+        protected void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

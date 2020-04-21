@@ -11,14 +11,28 @@ namespace LogicaNegocio
     {
         
 
-        public static void AgregarProductoLista(ProductoEntidad producto)
+        public static void AgregarProductoLista(CarritoEntidad producto)
         {
-            CompraEntidad.listaCarrito.Add(producto);
+            CarritoEntidad.listaCarrito.Add(producto);
         }
 
-        public static void EliminarProductoLista(ProductoEntidad producto)
+        public static CarritoEntidad encontrarArticuloenCarrito(int Producto)
         {
-            CompraEntidad.listaCarrito.Remove(producto);
+            CarritoEntidad entidad = CarritoEntidad.listaCarrito.Find(x => x.idProducto == Producto);
+            return entidad;
         }
+
+        public static void EliminarProductoLista(int producto)
+        {
+            CarritoEntidad.listaCarrito.Remove(encontrarArticuloenCarrito(producto));
+        }
+
+        public static void actualizarCantidad(int producto)
+        {
+            var obj = CarritoEntidad.listaCarrito.FirstOrDefault(x => x.idProducto == producto);
+            if (obj != null) obj.cantidadProductos = txt
+ 
+        }
+
     }
 }
