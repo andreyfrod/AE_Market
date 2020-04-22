@@ -11,7 +11,21 @@ namespace AE_Market_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+
+                Int32 totalCompra;
+                //Obtener una variable Query String
+                if (!String.IsNullOrEmpty(Request.QueryString["total"]))
+                {
+                    if (Int32.TryParse(Request.QueryString["total"], out totalCompra))
+                    {
+                        this.lblTotal.Text = totalCompra.ToString();
+                    }
+                }
+               
+            }
         }
     }
 }
