@@ -18,6 +18,7 @@ namespace AE_Market_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            totalcantidad = 0; 
         }
 
         protected ProductoEntidad obtenerProductoxId (int idProducto)
@@ -47,6 +48,7 @@ namespace AE_Market_Web
             row = (TextBox)grow.FindControl("txtQuantity");
             int idProducto = Convert.ToInt32(row.Attributes["CommandArgument"].ToString());
             CompraLN.actualizarCantidad(idProducto, Convert.ToInt32(row.Text));
+            totalcantidad = 0;
             Response.Redirect("carritoCompras.aspx");
         }
 
