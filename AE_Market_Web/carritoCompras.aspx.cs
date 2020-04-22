@@ -49,16 +49,28 @@ namespace AE_Market_Web
             Response.Redirect("carritoCompras.aspx");
         }
 
-        protected void btnPagar_Click(object sender, EventArgs e)
+       
+
+        protected void btnPagar_Command(object sender, CommandEventArgs e)
         {
+           
+
             if (Session["usuario"] == null)
             {
                 Response.Redirect("inicioSesion.aspx");
             }
             else
             {
-                Response.Redirect("cajaPago.aspx");
+                int total = int.Parse(e.CommandArgument.ToString());
+                
+                //Redireccionar a otra página
+                Response.Redirect("cajaPago.aspx?total=" + total);
+                //Query String
+                //?nombre=valor
+                //?nombre=valor&nombre=valor
+              
             }
+
         }
     }
 }
