@@ -145,10 +145,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\addN-01.jpg" />
+    <Content Include="images\addN-02.jpg" />
     <Content Include="images\AELogo.png" />
-    <Content Include="images\banner-01.jpg" />
-    <Content Include="images\banner-02.jpeg" />
-    <Content Include="images\banner-03.jpg" />
+    <Content Include="images\bannerN-01.jpg" />
+    <Content Include="images\bannerN-02.jpeg" />
+    <Content Include="images\bannerN-03.jpg" />
     <Content Include="listaNiveles.aspx" />
     <Content Include="listaProductosElectronicos.aspx" />
     <Content Include="listaProductosHogar.aspx" />
@@ -160,8 +162,6 @@
     <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\about-img.jpg" />
-    <Content Include="images\add-img-01.jpg" />
-    <Content Include="images\add-img-02.jpg" />
     <Content Include="images\apple-touch-icon.png" />
     <Content Include="images\big-img-01.jpg" />
     <Content Include="images\big-img-02.jpg" />
