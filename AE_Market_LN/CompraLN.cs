@@ -18,6 +18,11 @@ namespace LogicaNegocio
             CarritoEntidad.listaCarrito.Add(producto);
         }
 
+        public static void limpiarLista()
+        {
+            CarritoEntidad.listaCarrito.Clear();
+        }
+
         public static CarritoEntidad encontrarArticuloenCarrito(int Producto)
         {
             CarritoEntidad entidad = CarritoEntidad.listaCarrito.Find(x => x.idProducto == Producto);
