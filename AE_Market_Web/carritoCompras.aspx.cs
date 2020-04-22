@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using AE_Market_Entidades;
+using Entidades;
 using LogicaNegocio;
 using System;
 using System.Collections.Generic;
@@ -64,14 +65,67 @@ namespace AE_Market_Web
             }
             else
             {
-                int total = int.Parse(e.CommandArgument.ToString());
+                //Usuario autentificado
+                UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
+
                 
-                //Redireccionar a otra página
-                Response.Redirect("cajaPago.aspx?total=" + total);
-                //Query String
-                //?nombre=valor
-                //?nombre=valor&nombre=valor
-              
+                CompraEntidad compra = new CompraEntidad();
+                compra.fecha = DateTime.Now;
+                compra.idUsuario = user.idUsuario;
+                
+                
+                double descuento;
+                double totalPagar = Convert.ToDouble(totalcantidad);
+
+                //Consultar cupon por usuario
+                List<CuponEntidad> cupones = new List<CuponEntidad>();
+                cupones=CuponLN.ObtenerCuponporUsuario(user.idUsuario);
+                foreach (var item in cupones)
+                {
+                    if (item.idUsuario==user.idUsuario)
+                    {
+                        NivelEntidad nivel = NivelLN.Obtener(item.idNivel);
+                        if (nivel.descripcion=="Bronce")
+                        {
+                            compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.02));
+                            descuento = totalPagar * 0.02;
+                        }
+                        else
+                        {
+                            if (nivel.descripcion == "Plata")
+                            {
+                                compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.05));
+                                descuento = totalPagar * 0.05;
+                            }
+                            else
+                            {
+                                if (nivel.descripcion == "Plata")
+                                {
+                                    compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.07));
+                                    descuento = totalPagar * 0.07;
+                                }
+                                else
+                                {
+                                    compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.10));
+                                    descuento = totalPagar * 0.10;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Datos producto
+                foreach (var item in listaCarrito)
+                {
+
+                    compra.idProducto = item.idProducto;
+                    compra.cantidadProductos = item.cantidadProductos;
+                }
+
+                CompraLN.Nuevo(compra);
+                
+                
+
             }
 
         }
