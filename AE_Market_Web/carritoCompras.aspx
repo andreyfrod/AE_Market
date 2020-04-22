@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="row my-5">
+            <%--<div class="row my-5">
                 <div class="col-lg-12 col-sm-6">
                     <div class="coupon-box">
                         <div class="input-group input-group-sm">
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
@@ -64,12 +64,12 @@
                         </div>
                         <div class="d-flex">
                             <h4>Descuento General</h4>
-                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
+                            <div class="ml-auto font-weight-bold"> ₡ <%= descuentoGlobal %> </div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Descuento por cupon</h4>
-                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
+                            <div class="ml-auto font-weight-bold"> ₡ <%= descuentoGlobal %> </div>
                         </div>
                         <div class="d-flex">
                             <h4>IVA</h4>
@@ -82,7 +82,7 @@
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Total</h5>
-                            <div class="ml-auto h5"> ₡ <%= totalcantidad %> </div>
+                            <div class="ml-auto h5"> ₡ <%= totalFinal %> </div>
             
                         </div>
                         
@@ -91,7 +91,8 @@
                 </div>
             
                          <div class="col-12 d-flex shopping-box"><asp:LinkButton class="ml-auto btn hvr-hover" runat="server" ID="LinkButton1" Text="Pagar"  style="font-size:12px;" OnCommand="btnPagar_Command" CommandArgument="<%#: totalcantidad %>"></asp:LinkButton></div>
-         </div>
+            <asp:Label ID="lblMensaje" runat="server" CssClass="col-sm-2 col-form-label" ></asp:Label>
+            </div>
     </div>
     <!-- End Cart -->  
 
