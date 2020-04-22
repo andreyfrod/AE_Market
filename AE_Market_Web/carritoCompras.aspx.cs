@@ -13,7 +13,8 @@ namespace AE_Market_Web
     {
         public List<CarritoEntidad> listaCarrito { get { return CarritoEntidad.listaCarrito; } }
 
-        public decimal totalcantidad;
+        public static decimal totalcantidad;
+        public decimal totalpago;
 
         protected void Page_Load(object sender, EventArgs e)
         {
