@@ -34,6 +34,7 @@
                                 totalcantidad = totalcantidad + item.total;
 
                             } %>
+                          
 
                     </div>
                 </div>
@@ -82,13 +83,15 @@
                         <div class="d-flex gr-total">
                             <h5>Total</h5>
                             <div class="ml-auto h5"> ₡ <%= totalcantidad %> </div>
+            
                         </div>
+                        
                         <hr> </div>
                 </div>
-                <div class="col-12 d-flex shopping-box"><asp:LinkButton class="ml-auto btn hvr-hover" runat="server" ID="btnPagar" Text="Pagar" CommandName="Pagar" style="font-size:12px;" OnClick="btnPagar_Click"></asp:LinkButton></div>
-            </div>
-
-        </div>
+                </div>
+            
+                         <div class="col-12 d-flex shopping-box"><asp:LinkButton class="ml-auto btn hvr-hover" runat="server" ID="LinkButton1" Text="Pagar"  style="font-size:12px;" OnCommand="btnPagar_Command" CommandArgument="<%#: totalcantidad %>"></asp:LinkButton></div>
+         </div>
     </div>
     <!-- End Cart -->  
 

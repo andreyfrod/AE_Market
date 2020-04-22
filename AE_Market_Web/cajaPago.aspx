@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="carritoCompras.aspx.cs" Inherits="AE_Market_Web.carritoCompras" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/cajaPago.aspx.cs" Inherits="AE_Market_Web.cajaPago" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -76,7 +76,8 @@
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Total a pagar</h5>
-                                    <div class="ml-auto h5"> $ 388 </div>
+                                    <div class="ml-auto h5"> 
+    <asp:Label ID="lblTotal" runat="server" CssClass="col-sm-2 col-form-label" ></asp:Label> </div>
                                 </div>
                                 <hr> </div>
                         </div>
