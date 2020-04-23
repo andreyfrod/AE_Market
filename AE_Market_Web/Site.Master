@@ -64,7 +64,7 @@
 					<div class="login-box">
                         <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-ticket-alt s_color"></i> Cupones</a></li>
+                            <li><asp:Label ID="lblListaCupones" Visible="false" runat="server"> <a href="listaCupones.aspx"> <i class="fa fa-ticket-alt s_color"></i> Cupones </a> </asp:Label></li>
                         </ul>
                     </div>
 					</div>

@@ -18,12 +18,14 @@ namespace AE_Market_Web
         public decimal totalpago;
         public static decimal descuentoGlobal;
         public static decimal totalFinal;
+        public String mensajeDescuento;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             totalcantidad = 0;
             descuentoGlobal = 0;
             totalFinal = 0;
+            mensajeDescuento = "";
             calculoDescuento();
             this.lblMensaje.Text = "";
         }
@@ -152,11 +154,11 @@ namespace AE_Market_Web
                     }
                     
                     CompraLN.Nuevo(compra);
-                    this.lblMensaje.Text = "Compra realizada con exito";
                     CompraLN.limpiarLista();
                     descuentoGlobal = 0;
                     totalFinal = 0;
-                    
+                    Response.Redirect("carritoCompras.aspx");
+                    this.lblMensaje.Text = "Compra realizada con exito";
                 }
                 
                 
@@ -168,66 +170,73 @@ namespace AE_Market_Web
 
         protected void calculoDescuento() {
 
-            //Usuario autentificado
-            UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
-
-
-            CompraEntidad compra = new CompraEntidad();
-            
-
-            //Datos producto
-            double descuento = 0;
-            double totalPagar = 0;
-            foreach (var item in listaCarrito)
+            if (Session["usuario"] == null)
             {
-                compra.idProducto = item.idProducto;
-                totalPagar = Convert.ToDouble(item.total);
-
+                mensajeDescuento = "Ingrese sesion para ver sus cupones y obtener descuentos!";
             }
-
-
-
-            //Consultar cupon por usuario
-            List<CuponEntidad> cupones = new List<CuponEntidad>();
-            cupones = CuponLN.ObtenerCuponporUsuario(user.idUsuario);
-            foreach (var item in cupones)
+            else
             {
-                if (item.idNivel == user.nivelEntidad.idNivel && item.idProducto == compra.idProducto)
+
+                //Usuario autentificado
+                UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
+
+
+                CompraEntidad compra = new CompraEntidad();
+
+
+                //Datos producto
+                double descuento = 0;
+                double totalPagar = 0;
+                foreach (var item in listaCarrito)
                 {
-                    NivelEntidad nivel = NivelLN.Obtener(item.idNivel);
-                    if (nivel.descripcion == "Bronce")
+                    compra.idProducto = item.idProducto;
+                    totalPagar = Convert.ToDouble(item.total);
+
+                }
+
+
+
+                //Consultar cupon por usuario
+                List<CuponEntidad> cupones = new List<CuponEntidad>();
+                cupones = CuponLN.ObtenerCuponporUsuario(user.idUsuario);
+                foreach (var item in cupones)
+                {
+                    if (item.idNivel == user.nivelEntidad.idNivel && item.idProducto == compra.idProducto)
                     {
-                        compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.02));
-                        descuento = totalPagar * 0.02;
-                    }
-                    else
-                    {
-                        if (nivel.descripcion == "Plata")
+                        NivelEntidad nivel = NivelLN.Obtener(item.idNivel);
+                        if (nivel.descripcion == "Bronce")
                         {
-                            compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.05));
-                            descuento = totalPagar * 0.05;
+                            compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.02));
+                            descuento = totalPagar * 0.02;
                         }
                         else
                         {
-                            if (nivel.descripcion == "Oro")
+                            if (nivel.descripcion == "Plata")
                             {
-                                compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.07));
-                                descuento = totalPagar * 0.07;
+                                compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.05));
+                                descuento = totalPagar * 0.05;
                             }
                             else
                             {
-                                compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.10));
-                                descuento = totalPagar * 0.10;
+                                if (nivel.descripcion == "Oro")
+                                {
+                                    compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.07));
+                                    descuento = totalPagar * 0.07;
+                                }
+                                else
+                                {
+                                    compra.total = Convert.ToDecimal(totalPagar - (totalPagar * 0.10));
+                                    descuento = totalPagar * 0.10;
+                                }
                             }
                         }
                     }
                 }
+
+                descuentoGlobal = Convert.ToDecimal(descuento);
+                totalFinal = Convert.ToDecimal(totalPagar - descuento);
             }
-
-            descuentoGlobal = Convert.ToDecimal(descuento);
-            totalFinal = Convert.ToDecimal(totalPagar - descuento);
         }
-
 
     }
 }

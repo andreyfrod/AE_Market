@@ -15,5 +15,7 @@ namespace Entidades
         public int idNivel { get; set; }
         public int idUsuario { get; set; }
         public int idProducto { get; set; }
+
+        public static List<CuponEntidad> listaCupon = new List<CuponEntidad>();
     }
 }

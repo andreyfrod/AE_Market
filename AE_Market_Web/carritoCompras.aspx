@@ -40,19 +40,6 @@
                 </div>
             </div>
 
-            <%--<div class="row my-5">
-                <div class="col-lg-12 col-sm-6">
-                    <div class="coupon-box">
-                        <div class="input-group input-group-sm">
-                            <input id="numeroCupon" class="form-control" placeholder="Ingrese el codigo de su cupon" aria-label="Coupon code" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Aplicar Cupon</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
-
             <div class="row my-5">
                 <div class="col-lg-8 col-sm-12"></div>
                 <div class="col-lg-8 col-sm-12">
@@ -66,18 +53,13 @@
                             <h4>Descuento General</h4>
                             <div class="ml-auto font-weight-bold"> ₡ <%= descuentoGlobal %> </div>
                         </div>
+                        <div class="d-flex">
+                            <%= mensajeDescuento %>
+                        </div>
                         <hr class="my-1">
                         <div class="d-flex">
                             <h4>Descuento por cupon</h4>
                             <div class="ml-auto font-weight-bold"> ₡ <%= descuentoGlobal %> </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>IVA</h4>
-                            <div class="ml-auto font-weight-bold"> ₡ 0 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Costo de envio</h4>
-                            <div class="ml-auto font-weight-bold"> Gratis </div>
                         </div>
                         <hr>
                         <div class="d-flex gr-total">

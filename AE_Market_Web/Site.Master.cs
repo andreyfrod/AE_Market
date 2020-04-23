@@ -24,6 +24,7 @@ namespace AE_Market_Web
                 lblRegistrarUsuario.Visible = true;
                 lblCambioContrasenna.Visible = true;
                 lblCupon.Visible = true;
+                lblListaCupones.Visible = true;
 
                 UsuarioEntidad user = (UsuarioEntidad)Session["usuario"];
                 lblNombreUsuario.Text = user.nombre;
@@ -32,6 +33,7 @@ namespace AE_Market_Web
                     lblNivel.Text = user.nivelEntidad.descripcion;
                     lblNivel.Visible = true;
                     lblRegistrarUsuario.Visible = false;
+                    lblCupon.Visible = false;
                 }
 
             }

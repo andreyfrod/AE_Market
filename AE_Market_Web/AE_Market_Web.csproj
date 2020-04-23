@@ -151,6 +151,7 @@
     <Content Include="images\bannerN-01.jpg" />
     <Content Include="images\bannerN-02.jpeg" />
     <Content Include="images\bannerN-03.jpg" />
+    <Content Include="listaCupones.aspx" />
     <Content Include="listaNiveles.aspx" />
     <Content Include="listaProductosElectronicos.aspx" />
     <Content Include="listaProductosHogar.aspx" />
@@ -334,6 +335,13 @@
     </Compile>
     <Compile Include="inicioSesion.aspx.designer.cs">
       <DependentUpon>inicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCupones.aspx.cs">
+      <DependentUpon>listaCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCupones.aspx.designer.cs">
+      <DependentUpon>listaCupones.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaNiveles.aspx.cs">
       <DependentUpon>listaNiveles.aspx</DependentUpon>
