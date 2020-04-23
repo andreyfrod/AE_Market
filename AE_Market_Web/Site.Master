@@ -125,7 +125,6 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="listaNiveles.aspx">Niveles de usuario</a></li>    
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contactenos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
